@@ -45,6 +45,7 @@ type IDPAccount struct {
 	RoleARN              string `ini:"role_arn"`
 	HttpAttemptsCount    string `ini:"http_attempts_count"`
 	HttpRetryDelay       string `ini:"http_retry_delay"`
+	Region               string `ini:"region"`
 }
 
 func (ia IDPAccount) String() string {
@@ -72,7 +73,8 @@ func (ia IDPAccount) String() string {
   SessionDuration: %d
   Profile: %s
   RoleARN: %s
-}`, appID, policyID, ia.URL, ia.Username, ia.Provider, ia.MFA, ia.SkipVerify, ia.AmazonWebservicesURN, ia.SessionDuration, ia.Profile, ia.RoleARN)
+  Region: %s
+}`, appID, policyID, ia.URL, ia.Username, ia.Provider, ia.MFA, ia.SkipVerify, ia.AmazonWebservicesURN, ia.SessionDuration, ia.Profile, ia.RoleARN, ia.Region)
 }
 
 // Validate validate the required / expected fields are set
